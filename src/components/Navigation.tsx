@@ -38,7 +38,7 @@ const Navigation = () => {
               About Us
             </button>
             <Button
-              onClick={() => window.open("https://wa.me/919844803193", "_blank")}
+              onClick={() => window.open("https://wa.me/919848803193", "_blank")}
               className="bg-[#25D366] hover:bg-[#20BA5A] text-white"
             >
               <Phone className="w-4 h-4 mr-2" />

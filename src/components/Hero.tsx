@@ -22,9 +22,16 @@ const Hero = () => {
         <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto drop-shadow-md">
           Authentic Andhra-style homemade pickles and powders, prepared in small batches with traditional recipes
         </p>
+
+        {/* ⭐ DELIVERY TIME MESSAGE ADDED HERE ⭐ */}
+        <p className="text-lg md:text-xl mb-4 text-yellow-300 font-semibold drop-shadow-md">
+          Delivery Time: 7–10 Days
+        </p>
+        {/* ⭐ END ⭐ */}
+
         <Button
           size="lg"
-          onClick={() => window.open("https://wa.me/919844803193", "_blank")}
+          onClick={() => window.open("https://wa.me/919848803193", "_blank")}
           className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg px-8 py-6"
         >
           <Phone className="w-5 h-5 mr-2" />
