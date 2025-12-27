@@ -12,7 +12,7 @@ import mangoImg from "@/assets/avakaya.png";
 import gonguraImg from "@/assets/Gongura.png";
 import gonguraMirchiImg from "@/assets/Pandu Mirchi (Gongura).png";
 import lemonImg from "@/assets/Lemon.png";
-import mintImg from "@/assets/Mint.png";
+// import mintImg from "@/assets/Mint.png";
 import cauliflowerImg from "@/assets/Cauliflower.png";
 import kakarakayaImg from "@/assets/Kakarakaya.png";
 import panduMirchiImg from "@/assets/Pandu Mirchi.png";
