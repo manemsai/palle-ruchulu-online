@@ -16,7 +16,7 @@ import lemonImg from "@/assets/Lemon.png";
 import cauliflowerImg from "@/assets/Cauliflower.png";
 import kakarakayaImg from "@/assets/Kakarakaya.png";
 import panduMirchiImg from "@/assets/Pandu Mirchi.png";
-import tomatoImg from "@/assets/Tomato.png";
+import tomatoImg from "@/assets/tomato.png";
 import kandaImg from "@/assets/Kanda Onion.png";
 import munagakayaImg from "@/assets/Munagakaya.png";
 import pudinaImg from "@/assets/Pudina.png";
