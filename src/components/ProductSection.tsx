@@ -3,16 +3,16 @@ import ProductCard from "./ProductCard";
 interface Product {
   name: string;
   description: string;
+  image: string;
 }
 
 interface ProductSectionProps {
   id: string;
   title: string;
   products: Product[];
-  image: string;
 }
 
-const ProductSection = ({ id, title, products, image }: ProductSectionProps) => {
+const ProductSection = ({ id, title, products }: ProductSectionProps) => {
   return (
     <section id={id} className="py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -23,7 +23,7 @@ const ProductSection = ({ id, title, products, image }: ProductSectionProps) => 
               key={index}
               name={product.name}
               description={product.description}
-              image={image}
+              image={product.image}
             />
           ))}
         </div>

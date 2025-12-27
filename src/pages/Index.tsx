@@ -4,8 +4,6 @@ import ProductSection from "@/components/ProductSection";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-// import vegPickleImage from "@/assets/veg-pickle.jpg";
-// import nonvegPickleImage from "@/assets/nonveg-pickle.jpg";
 import powderImage from "@/assets/powder.jpg";
 
 // Veg
@@ -51,7 +49,7 @@ const Index = () => {
     { name: "Cauliflower", description: "Crunchy cauliflower pickle, homemade style",image:cauliflowerImg },
     { name: "Kakarakaya", description: "Bitter gourd pickle with balanced flavors",image:kakarakayaImg },
     { name: "Munagakaya", description: "Drumstick pickle, traditional Andhra recipe",image:munagakayaImg },
-    { name: "Tomato", description: "Tangy tomato pickle with aromatic spices",Image:tomatoImg },
+    { name: "Tomato", description: "Tangy tomato pickle with aromatic spices",image:tomatoImg },
     { name: "Kanda", description: "Traditional yam pickle with rich Andhra spices",image:kandaImg },
     { name: "Mint", description: "Fresh mint leaves pickle with a cool, aromatic taste",image:mintImg },
   ];
@@ -70,12 +68,12 @@ const Index = () => {
   ];
 
   const karamPowders = [
-    { name: "Nalla Karam", description: "Traditional black sesame karam powder" },
-    { name: "Karivepaku Karam", description: "Curry leaves karam, aromatic and healthy" },
-    { name: "Velluli Karam", description: "Garlic karam powder, rich flavor" },
-    { name: "Munagaku Karam", description: "Drumstick leaves karam, nutritious" },
-    { name: "Kandhi Karam", description: "Red chili karam, pure and spicy" },
-    { name: "Kakarakaya Karam", description: "Bitter gourd karam, healthy blend" },
+    { name: "Nalla Karam", description: "Traditional black sesame karam powder",image: powderImage },
+    { name: "Karivepaku Karam", description: "Curry leaves karam, aromatic and healthy",image: powderImage },
+    { name: "Velluli Karam", description: "Garlic karam powder, rich flavor",image: powderImage },
+    { name: "Munagaku Karam", description: "Drumstick leaves karam, nutritious",image: powderImage },
+    { name: "Kandhi Karam", description: "Red chili karam, pure and spicy",image: powderImage },
+    { name: "Kakarakaya Karam", description: "Bitter gourd karam, healthy blend",image: powderImage },
   ];
 
   return (
@@ -87,19 +85,17 @@ const Index = () => {
           id="veg-pickles"
           title="Veg Pickles"
           products={vegPickles}
-          image={vegPickleImage}
+
         />
         <ProductSection
           id="nonveg-pickles"
           title="Non-Veg Pickles"
           products={nonVegPickles}
-          image={nonvegPickleImage}
         />
         <ProductSection
           id="powders"
           title="Karam Powders"
           products={karamPowders}
-          image={powderImage}
         />
         <About />
         <Footer />
