@@ -10,7 +10,7 @@ import powderImage from "@/assets/powder.jpg";
 import allamImg from "@/assets/Allam (Ginger).png";
 import mangoImg from "@/assets/avakaya.png";
 import gonguraImg from "@/assets/Gongura.png";
-import gonguraMirchiImg from "@/assets/veg_pics/Pandu Mirchi (Gongura).png";
+import gonguraMirchiImg from "@/assets/Pandu Mirchi (Gongura).png";
 import lemonImg from "@/assets/Lemon.png";
 import mintImg from "@/assets/Mint.png";
 import cauliflowerImg from "@/assets/Cauliflower.png";
