@@ -51,7 +51,7 @@ const Index = () => {
     { name: "Munagakaya", description: "Drumstick pickle, traditional Andhra recipe",image:munagakayaImg },
     { name: "Tomato", description: "Tangy tomato pickle with aromatic spices",image:tomatoImg },
     { name: "Kanda", description: "Traditional yam pickle with rich Andhra spices",image:kandaImg },
-    { name: "Mint", description: "Fresh mint leaves pickle with a cool, aromatic taste",image:mintImg },
+    // { name: "Mint", description: "Fresh mint leaves pickle with a cool, aromatic taste",image:mintImg },
   ];
 
   const nonVegPickles = [
