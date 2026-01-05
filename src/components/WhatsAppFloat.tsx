@@ -1,15 +1,21 @@
-import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 
-const WhatsAppFloat = () => {
+interface WhatsAppFloatProps {
+  hidden?: boolean;
+}
+
+const WhatsAppFloat = ({ hidden }: WhatsAppFloatProps) => {
+  if (hidden) return null;
+
   return (
-    <Button
-      onClick={() => window.open("https://wa.me/919848803193", "_blank")}
-      className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] text-white shadow-lg hover:shadow-xl transition-all z-50"
-      size="icon"
-    >
-      <MessageCircle className="w-8 h-8" />
-    </Button>
+    <div className="fixed bottom-6 right-6 z-40">
+      <button
+        onClick={() => window.open("https://wa.me/919848803193", "_blank")}
+        className="bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full p-4 shadow-lg flex items-center justify-center"
+      >
+        <Phone className="w-5 h-5" />
+      </button>
+    </div>
   );
 };
 
