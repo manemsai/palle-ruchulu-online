@@ -1,5 +1,7 @@
 import { X, Plus, Minus, Trash2 } from "lucide-react";
 import { useCart } from "@/components/CartContext";
+import { useNavigate } from "react-router-dom";
+
 
 
 interface CartDrawerProps {
@@ -9,6 +11,8 @@ interface CartDrawerProps {
 
 const CartDrawer = ({ open, onClose }: CartDrawerProps) => {
   const { cart, updateQuantity, removeItem } = useCart();
+  const navigate = useNavigate();
+
 
 
   const total = cart.reduce(
@@ -116,9 +120,16 @@ const CartDrawer = ({ open, onClose }: CartDrawerProps) => {
               <span>₹{total}</span>
             </div>
 
-            <button className="w-full bg-primary text-white py-2 rounded-md">
-              Checkout
-            </button>
+            <button
+  className="w-full bg-primary text-white py-2 rounded-md"
+  onClick={() => {
+    onClose();          // close drawer
+    navigate("/checkout"); // go to user profile page
+  }}
+>
+  Checkout
+</button>
+
           </div>
         )}
       </div>
