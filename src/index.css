@@ -1,95 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Palle Ruchulu design system — warm, artisanal, appetizing.
+   All colors are HSL. */
 
 @layer base {
   :root {
-    --background: 45 38% 96%;
-    --foreground: 25 50% 15%;
+    --background: 43 55% 96%;
+    --foreground: 18 45% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 25 50% 15%;
+    --card-foreground: 18 45% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 50% 15%;
+    --popover-foreground: 18 45% 14%;
 
-    --primary: 35 85% 50%;
-    --primary-foreground: 25 50% 15%;
+    --primary: 6 68% 36%;
+    --primary-foreground: 43 55% 97%;
 
-    --secondary: 38 60% 88%;
-    --secondary-foreground: 25 50% 15%;
+    --secondary: 40 60% 90%;
+    --secondary-foreground: 18 45% 14%;
 
-    --muted: 38 40% 92%;
-    --muted-foreground: 25 30% 40%;
+    --muted: 40 35% 93%;
+    --muted-foreground: 20 25% 42%;
 
-    --accent: 25 80% 45%;
-    --accent-foreground: 45 38% 96%;
+    --accent: 36 92% 46%;
+    --accent-foreground: 18 45% 14%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 38 25% 85%;
-    --input: 38 25% 85%;
-    --ring: 35 85% 50%;
+    --border: 38 30% 86%;
+    --input: 38 30% 86%;
+    --ring: 6 68% 36%;
 
-    --radius: 0.75rem;
-    
-    --gradient-hero: linear-gradient(135deg, hsl(35 85% 50%), hsl(25 80% 45%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(45 38% 98%));
-    --shadow-warm: 0 4px 20px -2px hsl(35 85% 50% / 0.15);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius: 0.9rem;
+
+    --shadow-warm: 0 10px 30px -12px hsl(6 68% 36% / 0.25);
+    --shadow-card: 0 2px 12px -4px hsl(18 45% 14% / 0.12);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 25 30% 10%;
-    --foreground: 45 38% 96%;
+    --background: 18 35% 10%;
+    --foreground: 43 55% 96%;
 
-    --card: 25 25% 15%;
-    --card-foreground: 45 38% 96%;
+    --card: 18 30% 14%;
+    --card-foreground: 43 55% 96%;
 
-    --popover: 25 25% 15%;
-    --popover-foreground: 45 38% 96%;
+    --popover: 18 30% 14%;
+    --popover-foreground: 43 55% 96%;
 
-    --primary: 35 85% 50%;
-    --primary-foreground: 25 50% 15%;
+    --primary: 6 65% 48%;
+    --primary-foreground: 43 55% 97%;
 
-    --secondary: 25 20% 20%;
-    --secondary-foreground: 45 38% 96%;
+    --secondary: 18 25% 18%;
+    --secondary-foreground: 43 55% 96%;
 
-    --muted: 25 20% 20%;
-    --muted-foreground: 38 20% 65%;
+    --muted: 18 25% 18%;
+    --muted-foreground: 40 20% 68%;
 
-    --accent: 25 80% 45%;
-    --accent-foreground: 45 38% 96%;
+    --accent: 36 92% 52%;
+    --accent-foreground: 18 45% 14%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 25 20% 25%;
-    --input: 25 20% 25%;
-    --ring: 35 85% 50%;
+    --border: 18 25% 22%;
+    --input: 18 25% 22%;
+    --ring: 6 65% 48%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -106,7 +97,34 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+}
+
+@layer components {
+  /* Small uppercase section label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-primary;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-px w-8 bg-accent;
+  }
+
+  /* Subtle grain/dot texture for hero & dark sections */
+  .texture-dots {
+    background-image: radial-gradient(hsl(0 0% 100% / 0.07) 1px, transparent 1px);
+    background-size: 22px 22px;
   }
 }
