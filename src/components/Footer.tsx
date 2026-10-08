@@ -2,6 +2,7 @@ import { MessageCircle, Phone } from "lucide-react";
 import { WHATSAPP_DISPLAY, waLink } from "@/lib/site";
 import { SHOP_FILTER_EVENT } from "@/components/Shop";
 import type { ShopProduct } from "@/components/Shop";
+import logo from "@/assets/logo.png";
 
 const shopLinks: { label: string; filter: ShopProduct["category"] }[] = [
   { label: "Veg Pickles", filter: "veg" },
@@ -31,9 +32,11 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-display text-xl font-bold">
-                ప
-              </span>
+              <img
+                src={logo}
+                alt="Palle Ruchulu Pickles logo"
+                className="h-11 w-11 rounded-xl object-cover"
+              />
               <span className="leading-tight">
                 <span className="block font-display text-xl font-bold">
                   Palle Ruchulu

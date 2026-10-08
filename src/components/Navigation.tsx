@@ -4,6 +4,7 @@ import { Menu, Phone, ShoppingCart, X } from "lucide-react";
 import { useCart } from "@/components/CartContext";
 import CartDrawer from "@/components/CartDrawer";
 import { waLink } from "@/lib/site";
+import logo from "@/assets/logo.png";
 
 import { SHOP_FILTER_EVENT } from "@/components/Shop";
 import type { ShopProduct } from "@/components/Shop";
@@ -48,9 +49,11 @@ const Navigation = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="flex items-center gap-2.5 text-left"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-display text-xl font-bold shadow-warm">
-                ప
-              </span>
+              <img
+                src={logo}
+                alt="Palle Ruchulu Pickles logo"
+                className="h-11 w-11 rounded-xl object-cover shadow-warm"
+              />
               <span className="leading-tight">
                 <span className="block font-display text-xl font-bold text-foreground">
                   Palle Ruchulu
