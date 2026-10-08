@@ -13,6 +13,14 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ["Fraunces", "Georgia", "serif"],
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
+      boxShadow: {
+        warm: "var(--shadow-warm)",
+        card: "var(--shadow-card)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

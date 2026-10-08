@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Relative asset paths so the built site works when hosted under any
+  // subpath (artifact previews, Lovable, subdirectories) — not just domain root.
+  base: "./",
   server: {
     host: "::",
     port: 8080,
