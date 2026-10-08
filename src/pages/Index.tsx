@@ -5,6 +5,7 @@ import Shop, { ShopProduct } from "@/components/Shop";
 import Craft from "@/components/Craft";
 import WhyUs from "@/components/WhyUs";
 import HowItWorks from "@/components/HowItWorks";
+import WhatsappPromo from "@/components/WhatsappPromo";
 import About from "@/components/About";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
@@ -102,6 +103,7 @@ const Index = () => {
       <Craft />
       <WhyUs />
       <HowItWorks />
+      <WhatsappPromo />
       <About />
       <Faq />
       <Footer />
