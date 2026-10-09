@@ -3,8 +3,8 @@ export type PicklePrice = {
   name: string;
   prices: {
     "250": number;
-    "500": number;
-    "1000": number;
+    "500"?: number;
+    "1000"?: number;
   };
 };
 
@@ -35,4 +35,15 @@ export const nonVegPickles: PicklePrice[] = [
   { id: "prawns", name: "Prawns", prices: { "250": 600, "500": 1100, "1000": 2000 } },
   { id: "gongura-prawns", name: "Gongura Chitti Royyalu", prices: { "250": 650, "500": 1150, "1000": 2100 } },
   { id: "koramenu", name: "Koramenu Fish", prices: { "250": 650, "500": 1150, "1000": 2100 } },
+];
+
+// Karam podi prices are for 250g packs, researched against online sellers
+// (Godavari Vantillu, Sumadhura, Tulasi Pickles, PushMyCart) and set ~₹20 below market.
+export const karamPowders: PicklePrice[] = [
+  { id: "nalla-karam", name: "Nalla Karam", prices: { "250": 180 } },
+  { id: "karivepaku-karam", name: "Karivepaku Karam", prices: { "250": 180 } },
+  { id: "velluli-karam", name: "Velluli Karam", prices: { "250": 180 } },
+  { id: "munagaku-karam", name: "Munagaku Karam", prices: { "250": 200 } },
+  { id: "kandhi-karam", name: "Kandhi Karam", prices: { "250": 180 } },
+  { id: "kakarakaya-karam", name: "Kakarakaya Karam", prices: { "250": 210 } },
 ];
