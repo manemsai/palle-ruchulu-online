@@ -97,13 +97,13 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <WhatsappPromo />
       <Hero />
       <CategoryTiles />
       <Shop products={allProducts} />
       <Craft />
       <WhyUs />
       <HowItWorks />
-      <WhatsappPromo />
       <About />
       <Faq />
       <Footer />
