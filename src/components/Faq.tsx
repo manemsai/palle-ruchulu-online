@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "What are the prices of the karam powders?",
-    a: "Tap “Ask price on WhatsApp” on any karam powder and we'll reply with the current price right away.",
+    a: "Karam powders now show their 250g pack price right on the product card — add to cart directly. For 500g or 1kg packs, WhatsApp us and we'll confirm the price right away.",
   },
 ];
 
