@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, MessageCircle, ShoppingCart } from "lucide-react";
+import { Check, MessageCircle, Minus, Plus, ShoppingCart } from "lucide-react";
 import { useCart } from "./CartContext";
 import { waLink } from "@/lib/site";
 
@@ -33,7 +33,7 @@ const ProductCard = ({ name, description, image, badge, prices }: ProductCardPro
     availableSizes[0] ?? "250"
   );
   const [added, setAdded] = useState(false);
-  const { addToCart } = useCart();
+  const { cart, addToCart, updateQuantity } = useCart();
 
   const handleAdd = () => {
     if (!prices) return;
@@ -42,6 +42,17 @@ const ProductCard = ({ name, description, image, badge, prices }: ProductCardPro
     addToCart({ name, image, size, price, quantity: 1 });
     setAdded(true);
     window.setTimeout(() => setAdded(false), 1400);
+  };
+
+  // How many of this exact item+size are already in the cart
+  const inCartQty = prices
+    ? cart
+        .filter((i) => i.name === name && i.size === size)
+        .reduce((n, i) => n + i.quantity, 0)
+    : 0;
+
+  const stepDown = () => {
+    if (inCartQty > 0) updateQuantity(name, size, inCartQty - 1);
   };
 
   return (
@@ -95,24 +106,46 @@ const ProductCard = ({ name, description, image, badge, prices }: ProductCardPro
               </div>
             </div>
 
-            <button
-              onClick={handleAdd}
-              className={`flex w-full items-center justify-center gap-2 rounded-full py-2.5 text-sm font-semibold text-white transition-all ${
-                added
-                  ? "bg-green-700"
-                  : "bg-primary hover:bg-primary/90"
-              }`}
-            >
-              {added ? (
-                <>
-                  <Check className="h-4 w-4" /> Added to cart
-                </>
-              ) : (
-                <>
-                  <ShoppingCart className="h-4 w-4" /> Add to Cart
-                </>
-              )}
-            </button>
+            {inCartQty > 0 ? (
+              <div className="flex w-full items-center justify-between rounded-full border border-primary/40 bg-primary/10 px-1.5 py-1.5">
+                <button
+                  onClick={stepDown}
+                  aria-label="Remove one"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-primary shadow-sm hover:bg-primary hover:text-white transition-colors"
+                >
+                  <Minus className="h-4 w-4" />
+                </button>
+                <span className="text-sm font-bold text-primary">
+                  {inCartQty} in cart
+                </span>
+                <button
+                  onClick={handleAdd}
+                  aria-label="Add one more"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white shadow-sm hover:bg-primary/90 transition-colors"
+                >
+                  <Plus className="h-4 w-4" />
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={handleAdd}
+                className={`flex w-full items-center justify-center gap-2 rounded-full py-2.5 text-sm font-semibold text-white transition-all ${
+                  added
+                    ? "bg-green-700"
+                    : "bg-primary hover:bg-primary/90"
+                }`}
+              >
+                {added ? (
+                  <>
+                    <Check className="h-4 w-4" /> Added to cart
+                  </>
+                ) : (
+                  <>
+                    <ShoppingCart className="h-4 w-4" /> Add to Cart
+                  </>
+                )}
+              </button>
+            )}
           </div>
         ) : (
           <div className="mt-auto">
