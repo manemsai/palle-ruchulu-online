@@ -10,7 +10,7 @@ import About from "@/components/About";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-import { vegPickles, nonVegPickles } from "@/lib/picklePrices";
+import { vegPickles, nonVegPickles, karamPowders } from "@/lib/picklePrices";
 
 // Veg images
 import allamImg from "@/assets/Allam (Ginger).png";
@@ -86,7 +86,7 @@ const Index = () => {
     { name: "Kakarakaya Karam", description: "Bitter-gourd podi — a healthy, bittersweet blend.", image: kakarakayaKaramImg, category: "powder" },
   ];
 
-  const priceList = [...vegPickles, ...nonVegPickles];
+  const priceList = [...vegPickles, ...nonVegPickles, ...karamPowders];
   const allProducts: ShopProduct[] = [...veg, ...nonVeg, ...powders].map((item) => {
     const priceInfo = priceList.find(
       (p) => p.name.toLowerCase() === item.name.toLowerCase()
