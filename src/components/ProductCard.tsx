@@ -5,8 +5,8 @@ import { waLink } from "@/lib/site";
 
 export type PriceTiers = {
   "250": number;
-  "500": number;
-  "1000": number;
+  "500"?: number;
+  "1000"?: number;
 };
 
 interface ProductCardProps {
@@ -24,13 +24,22 @@ const sizeLabels: Record<keyof PriceTiers, string> = {
 };
 
 const ProductCard = ({ name, description, image, badge, prices }: ProductCardProps) => {
-  const [size, setSize] = useState<keyof PriceTiers>("250");
+  const availableSizes = prices
+    ? (Object.keys(sizeLabels) as (keyof PriceTiers)[]).filter(
+        (s) => prices[s] !== undefined
+      )
+    : [];
+  const [size, setSize] = useState<keyof PriceTiers>(
+    availableSizes[0] ?? "250"
+  );
   const [added, setAdded] = useState(false);
   const { addToCart } = useCart();
 
   const handleAdd = () => {
     if (!prices) return;
-    addToCart({ name, image, size, price: prices[size], quantity: 1 });
+    const price = prices[size];
+    if (price === undefined) return;
+    addToCart({ name, image, size, price, quantity: 1 });
     setAdded(true);
     window.setTimeout(() => setAdded(false), 1400);
   };
@@ -62,7 +71,7 @@ const ProductCard = ({ name, description, image, badge, prices }: ProductCardPro
         {prices ? (
           <div className="mt-auto space-y-3">
             <div className="flex gap-2">
-              {(Object.keys(sizeLabels) as (keyof PriceTiers)[]).map((s) => (
+              {availableSizes.map((s) => (
                 <button
                   key={s}
                   onClick={() => setSize(s)}
@@ -79,7 +88,7 @@ const ProductCard = ({ name, description, image, badge, prices }: ProductCardPro
 
             <div className="flex items-end justify-between">
               <div>
-                <p className="text-2xl font-bold text-primary">₹{prices[size]}</p>
+                <p className="text-2xl font-bold text-primary">₹{prices[size] ?? "—"}</p>
                 <p className="text-[11px] text-muted-foreground">
                   {sizeLabels[size]} pack
                 </p>
