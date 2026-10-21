@@ -8,6 +8,7 @@ import HowItWorks from "@/components/HowItWorks";
 import WhatsappPromo from "@/components/WhatsappPromo";
 import About from "@/components/About";
 import Faq from "@/components/Faq";
+import ReturnPolicy from "@/components/ReturnPolicy";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { vegPickles, nonVegPickles, karamPowders } from "@/lib/picklePrices";
@@ -106,6 +107,7 @@ const Index = () => {
       <HowItWorks />
       <About />
       <Faq />
+      <ReturnPolicy />
       <Footer />
       <WhatsAppFloat />
     </div>
