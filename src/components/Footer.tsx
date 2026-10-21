@@ -14,6 +14,7 @@ const helpLinks = [
   { label: "How ordering works", id: "faq" },
   { label: "Our story", id: "about" },
   { label: "FAQs", id: "faq" },
+  { label: "Returns & refunds", id: "returns" },
 ];
 
 const Footer = () => {
