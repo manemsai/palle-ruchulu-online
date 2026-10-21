@@ -15,6 +15,10 @@ const faqs = [
     a: "Orders are prepared fresh in small batches and delivered across India in 7–10 days. Each jar is sealed and cushioned for safe travel.",
   },
   {
+    q: "What if my order arrives damaged or I get the wrong item?",
+    a: "Message us on WhatsApp within 7 days of delivery with a photo of the jar, and we will send you a free replacement for the damaged or wrong item. As these are homemade food items, we do not accept returns for any other reason.",
+  },
+  {
     q: "How do I place an order and pay?",
     a: "Add items to your cart and check out — your order details go straight to us on WhatsApp. We'll confirm your order, share the total including shipping, and collect payment then.",
   },
