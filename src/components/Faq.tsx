@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "What if my order arrives damaged or I get the wrong item?",
-    a: "Message us on WhatsApp within 7 days of delivery with a photo of the jar, and we will send you a free replacement for the damaged or wrong item. As these are homemade food items, we do not accept returns for any other reason.",
+    a: "Message us on WhatsApp within 2 days of delivery — returns are accepted for defective, damaged or wrong items in their original packaging. After approval we arrange the return at our own cost, and your refund is initiated within 4–5 working days of the product reaching us. For missing items, share an unboxing video within 24 hours of delivery. See our full Return, Cancellation & Refund Policy below.",
   },
   {
     q: "How do I place an order and pay?",
